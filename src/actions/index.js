@@ -1,5 +1,5 @@
 import axios from "axios";
-const { SAVE_COMMENT, FETCH_COMMENTS } = require("./types");
+const { SAVE_COMMENT, FETCH_COMMENTS, CHANGE_AUTH } = require("./types");
 
 export const saveComment = (comment) => {
   return {
@@ -14,5 +14,12 @@ export const fetchComments = () => {
   return {
     type: FETCH_COMMENTS,
     payload: response,
+  };
+};
+
+export const changeAuth = (isLoggedIn) => {
+  return {
+    type: CHANGE_AUTH,
+    payload: isLoggedIn,
   };
 };
